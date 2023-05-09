@@ -1,0 +1,46 @@
+$orange: #FF6838;
+$accent: #363853;
+$second: #31352B;
+
+%bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+%rubik-400 {
+  font-family: 'Rubik-Regular', sans-serif;
+  font-weight: 400;
+}
+
+%rubik-italic {
+  font-family: 'Rubik-Italic', sans-serif;
+  font-weight: 400;
+}
+
+%rubik-500 {
+  font-family: 'Rubik-Medium', sans-serif;
+  font-weight: 500;
+}
+
+%rubik-300 {
+  font-family: 'Rubik-Light', sans-serif;
+  font-weight: 300;
+}
+
+%button-transition {
+  transition: color 0.4s, background 0.4s, box-shadow 0.4s ;
+}
+
+%link-transition {
+  transition: box-shadow 0.5s, text-shadow 0.5s, color 0.4s;
+}
+
+%btn-style {
+  background-color: #FF6838;
+  border-color: transparent;
+  color: #fff;
+  border-radius: 5px;
+  padding: 12px 32px;
+}
+
