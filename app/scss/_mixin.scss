@@ -1,0 +1,57 @@
+@mixin line-clamp($lines: 1) {
+  @if $lines <=1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+   }
+}
+
+@mixin burger {
+	width: 44px;
+	height: 44px;
+	position: relative;
+	color: $accent;
+  border: transparent;
+  background-color: transparent;
+	&__line {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 30px;
+		height: 2px;
+		background-color: currentColor;
+		transition: transform 0.3s ease-in-out;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: 30px;
+		height: 2px;
+		background-color: currentColor;
+		transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+	}
+
+	&::before {
+		top: 12px;
+	}
+
+	&::after {
+		bottom: 12px;
+	}
+}

@@ -2,7 +2,9 @@ const { src, dest, watch, parallel, series }  = require('gulp');
 const scss = require('gulp-sass')(require('sass'));
 const concat  = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
+const svgSprite = require('gulp-svg-sprite');
 const uglify = require('gulp-uglify');
+const cheerio = require('gulp-cheerio');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const browserSync = require('browser-sync').create();
@@ -66,6 +68,43 @@ function build() {
   .pipe(dest('dist'))
 }
 
+function svgSprites() {
+  return src('app/images/icons/*.svg') 
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: '../sprite.svg', // 
+          },
+        },
+      })
+    )
+		.pipe(dest('app/images')); 
+}
+
+function svgSprites() {
+  return src('app/images/icons/*.svg') 
+  .pipe(cheerio({
+        run: ($) => {
+            $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
+            $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
+            $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
+        },
+        parserOptions: { xmlMode: true },
+      })
+  )
+	.pipe(
+	      svgSprite({
+	        mode: {
+	          stack: {
+	            sprite: '../sprite.svg', 
+	          },
+	        },
+	      })
+	    )
+	.pipe(dest('app/images')); 
+}
+
 function cleanDist() {
   return del('dist')
 }
@@ -73,6 +112,7 @@ function cleanDist() {
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'],scripts);
+  watch(['app/images/icons/*.svg'], svgSprites);
   watch(['app/**/*.html']).on('change',browserSync.reload);
   notify: false
 }
@@ -81,9 +121,10 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
+exports.svgSprites = svgSprites;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
 
 
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);
