@@ -1,4 +1,7 @@
 $(function() {
+  
+  
+
   $('.comments__inner').slick({
     arrows: true,
     dots: true,
@@ -15,7 +18,11 @@ $(function() {
       }
     ],
   });
+  
 });
+
+$('.catalog__top-select').styler();
+$('.inputt').styler();
 
 $(window).on('load resize', function () {
   if ($(window).width() < 768) {
@@ -30,21 +37,6 @@ $(window).on('load resize', function () {
     $('.restaurant__content.slick-initialized').slick('unslick');
   }
 });
-
-
-
-let header = document.querySelector(".header"),
-    headerH = document.querySelector('.header').clientHeight
-
-document.onscroll = function() {
-  let scroll = window.scrollY;
-  if (scroll > headerH) {
-    header.classList.add("header--js");
-  }
-  if (scroll < headerH) {
-    header.classList.remove("header--js");
-  }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
 	//DOMContentLoaded означает, когда наш документ будет готов к работе, тогда начнут работать наши скрипты

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/icons/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Simple Food Интернет Магазин</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<nav class="nav">
+				<div class="menu">
+					<div class="menu__top">
+						<a class="menu__logo" href="#" >
+							<img class="menu__img" src="images/Logo.png" alt="логототип" width="200", height="39">
+						</a>
+						<button class="menu__cross" type="button">
+							<span class="menu__cross-line"></span>
+							<span class="sr-only">Закрыть меню</span>
+						</button>
+					</div>
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a class="menu__link  link" href="#" >Главная</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link menu__link--main link" href="../app/product.html" >Блюда</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#" >Контакты</a>
+						</li>
+					</ul>
+					<div class="contacts___wrapper">
+						<ul class="contacts__list">
+							<li class="contacts__item">
+								<a class="contacts__link link" href="#" >
+									<svg class="contacts__svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<use xlink:href="images/sprite.svg#location"></use>	
+									</svg>
+										ул. Т.Г.Шевченко, 1
+								</a>
+							</li>
+							<li class="contacts__item">
+								<a class="contacts__link link" href="tel:+380501112233" >
+									<svg class="contacts__svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<use xlink:href="images/sprite.svg#calling"></use>
+									</svg>
+										380501112233
+								</a>
+							</li>
+							<li class="contacts__item">
+								<a class="contacts__link link" href="mailto:support@sfood.com" >
+									<svg class="contacts__svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<use xlink:href="images/sprite.svg#message"></use>
+										</svg>
+										support@sfood.com
+								</a>
+							</li>
+						</ul>
+						<ul class="socials-contacts">
+							<li class="socials-contacts__item">
+								<a class="socials-contacts__link" href="#" >
+									<span class="sr-only">Сылка на Фейсбук</span>
+									<svg width="10" height="21" viewBox="0 0 10 21"  xmlns="http://www.w3.org/2000/svg">
+										<use xlink:href="images/sprite.svg#facebook"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="socials-contacts__item">
+								<a class="socials-contacts__link" href="#" >
+									<span class="sr-only">Сылка на Твитер</span>
+									<svg width="21" height="17" viewBox="0 0 21 17"  xmlns="http://www.w3.org/2000/svg">
+										<use xlink:href="images/sprite.svg#twitter"></use>
+									</svg>                                    
+								</a>
+							</li>
+							<li class="socials-contacts__item">
+								<a class="socials-contacts__link" href="#" >
+									<span class="sr-only">Сылка на Инстаграм</span>
+									<svg width="20" height="20" viewBox="0 0 20 20"  xmlns="http://www.w3.org/2000/svg">
+										<use xlink:href="images/sprite.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<a class="logo header__logo" href="#" >
+					<img class="logo__img" src="images/Logo.png" alt="логототип" width="200", height="39">
+				</a>
+				<ul class="nav__list">
+					<li class="nav__item">
+						<a class="nav__link  link" href="#" >Главная</a>
+					</li>
+					<li class="nav__item ">
+						<a class="nav__link link nav__link--main" href="#" >Блюда</a>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link link" href="#" >Контакты</a>
+					</li>
+				</ul>
+				<ul class="nav-menu__list">
+					<li class="nav-menu__item">
+						<button class="nav-menu__link" type="button">
+							<span class="sr-only">Поиск</span>
+							<svg class="nav-menu__img nav-menu__img--search" width="21" height="22" viewBox="0 0 21 22" fill="none">
+								<use xlink:href="images/sprite.svg#Search"></use>
+							</svg>
+						</button>
+					</li>
+					<li class="nav-menu__item">
+						<button class="nav-menu__link" type="button">
+							<span class="sr-only">корзина</span>
+							<svg class="nav-menu__img nav-menu__img--cart" width="21" height="20" viewBox="0 0 21 20" fill="none">
+								<use xlink:href="images/sprite.svg#cart-icon"></use>
+							</svg>
+								<span class="nav-menu__num">4</span>
+						</button>
+					</li>
+					<li class="nav-menu__item">
+						<button class="burger" type="button">
+							<span class="burger__line"></span>
+							<span class="sr-only">Открыть меню</span> 
+						 </button>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="breadcrumbs">
+			<div class="container">
+				<ul class="breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="#">Главная</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="#">Каталог товаров</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="catalog">
+			<div class="container">
+				<div class="catalog__top">
+					<h2 class="catalog__title title">
+						Каталог продуктов
+					</h2>
+					<div class="catalog__top-selects">
+						<select class="catalog__top-select catalog__top-select--name">
+							<option value="">По названию</option>
+							<option value="">2</option>
+							<option value="">3</option>
+						</select>
+						<select class="catalog__top-select catalog__top-select--num">
+							<option value="">по 12</option>
+							<option value="">2</option>
+							<option value="">3</option>
+						</select>
+					</div>
+				</div>
+				<div class="catalog__inner">
+					<div class="catalog__filters">
+						<div class="filter catalog__categories">
+							<h3 class="filter-title">Категории</h3>
+							<div class="filter-content catalog__buttons">
+								<button class="catalog__btn" type="button">Бургеры</button>
+								<button class="catalog__btn" type="button">Пицца</button>
+								<button class="catalog__btn" type="button">Сендвичи</button>
+								<button class="catalog__btn" type="button">Азиатская кухня</button>
+								<button class="catalog__btn" type="button">Сеты</button>
+								<button class="catalog__btn" type="button">Европейская кухня</button>
+								<button class="catalog__btn" type="button">Напитки</button>
+								<button class="catalog__btn" type="button">Алкоголь</button>
+							</div>
+						</div>
+						<div class="filter catalog__proposals">
+							<h3 class="filter-title">Предложения</h3>
+							<div class="filter-content">
+								<form class="catalog__checkbox">
+									<label class="catalog__label">
+										<span class="catalog__text">Со скидкой</span>
+										<div class="catalog__checkbox-inner">
+											<input class="catalog__input" type="checkbox">
+											<span class="catalog__span"></span>
+										</div>
+									</label>
+								</form>
+								<form class="catalog__checkbox">
+									<label class="catalog__label">
+										<span class="catalog__text">Новинка</span>
+										<div class="catalog__checkbox-inner">
+											<input class="catalog__input" type="checkbox">
+											<span class="catalog__span"></span>
+										</div>
+									</label>
+								</form>
+								<form class="catalog__checkbox">
+									<label class="catalog__label">
+										<span class="catalog__text">Хит</span>
+										<div class="catalog__checkbox-inner">
+											<input class="catalog__input" type="checkbox">
+											<span class="catalog__span"></span>
+										</div>
+									</label>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="app section">
+			<div class="container">
+				<div class="app__inner">
+					<div class="app__content">
+						<h2 class="title app__title">
+							Скачайте мобильное приложение
+						</h2>
+						<p class="app__text">
+							Рестораны, которые вы любите - в ваших руках. Устанавливайте приложение и заказывайте еду в любом удобном месте. 
+						</p>
+						<ul class="app__links">
+							<li class="app__link">
+								<a  href="#" target="_blank">
+									<img src="images/appstore.jpg" alt="Ссылка для скачивания на Апстор" width="120", height="40">
+								</a>
+							</li>
+							<li class="app__link">
+								<a  href="#" target="_blank">
+									<img src="images/googleplay.jpg" alt="Ссылка для скачивания на Плэй маркет" width="135", height="40">
+								</a>
+							</li>   
+						</ul>
+						
+					</div>
+					<div class="app__img" style="background-image: url('../images/download-img.jpg');">
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer section">
+		<div class="container">
+			<div class="footer__inner">
+				<div class="footer__user-info">
+					<a class="logo " href="#" >
+						<img class="logo__img footer__logo" src="images/Logo.png" alt="логототип" >
+					</a>
+					<form class="form">                    
+						<input class="form__input" type="email" name="mail" required placeholder="Ваш email">
+						<label class="sr-only" for="mail"></label>
+						<button class="form__btn button">
+							<svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+								<use xlink:href="images/sprite.svg#telegram"></use>
+							</svg>
+							<span class="form__sub">Подписаться</span>
+						</button>
+				</form>
+				</div>
+				<div class="footer__links">
+					<ul class="footer__list">
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Как это работает</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >О нас</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Скачать приложение</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Продукты</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Новости</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Блог</a>
+						</li>
+						<li class="footer__item"
+						><a class="footer__link link" href="#" >Блюда</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Партнеры</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Что нового?</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Меню</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >ЧаВо</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link link" href="#" >Карта сайта
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="contacts___wrapper">
+					<ul class="contacts__list">
+						<li class="contacts__item">
+							<a class="contacts__link link" href="#" >
+								<svg class="contacts__svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<use xlink:href="images/sprite.svg#location"></use>	
+								</svg>
+									ул. Т.Г.Шевченко, 1
+							</a>
+						</li>
+						<li class="contacts__item">
+							<a class="contacts__link link" href="tel:+380501112233" >
+								<svg class="contacts__svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<use xlink:href="images/sprite.svg#calling"></use>
+								</svg>
+									380501112233
+							</a>
+						</li>
+						<li class="contacts__item">
+							<a class="contacts__link link" href="mailto:support@sfood.com" >
+								<svg class="contacts__svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<use xlink:href="images/sprite.svg#message"></use>
+									</svg>
+									support@sfood.com
+							</a>
+						</li>
+					</ul>
+					<ul class="socials-contacts">
+						<li class="socials-contacts__item">
+							<a class="socials-contacts__link" href="#" >
+								<span class="sr-only">Сылка на Фейсбук</span>
+								<svg width="10" height="21" viewBox="0 0 10 21"  xmlns="http://www.w3.org/2000/svg">
+									<use xlink:href="images/sprite.svg#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="socials-contacts__item">
+							<a class="socials-contacts__link" href="#" >
+								<span class="sr-only">Сылка на Твитер</span>
+								<svg width="21" height="17" viewBox="0 0 21 17"  xmlns="http://www.w3.org/2000/svg">
+									<use xlink:href="images/sprite.svg#twitter"></use>
+								</svg>                                    
+							</a>
+						</li>
+						<li class="socials-contacts__item">
+							<a class="socials-contacts__link" href="#" >
+								<span class="sr-only">Сылка на Инстаграм</span>
+								<svg width="20" height="20" viewBox="0 0 20 20"  xmlns="http://www.w3.org/2000/svg">
+									<use xlink:href="images/sprite.svg#instagram"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<span class="footer__bottom-text">© 2022 Simple Food</span>
+		</div>
+	</footer>
+	<script src="js/main.min.js"></script>
+</body>
