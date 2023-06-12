@@ -7,14 +7,9 @@
 
 .header {
   width: 100%;
-  padding-top: 57px;
+  padding: 57px 0;
   font-size: 18px;
   line-height: 21px;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  right: 0;
   transition: background-color 0.4s, padding 0.4s;
   @include r(1230) {
     position: inherit;
@@ -30,18 +25,6 @@
   &--js {
     background-color: $white;
     padding: 20px 0;
-  }
-}
-
-.header--js {
-  background-color: $white;
-  padding: 20px 0;
-  @include r(1230) {
-    padding: 57px 0 0 0;
-    background-color: #F9FAFF;
-  }
-  @include r(576) {
-    padding-top: 13px;
   }
 }
 
@@ -183,7 +166,7 @@
 }
 
 .delivery {
-  padding: 160px 0 60px;
+  padding-top: 0;
   @include r(1230) {
     padding-top: 60px;
     position: relative;
@@ -1053,6 +1036,113 @@
     fill: $orange-semilight;
   }
  }
+
+ .slick-slide {
+  height: max-content;
+ }
+
+ .catalog {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__top-select {
+    padding: 15px 0 15px 15px;
+    font-size: 14px;
+    line-height: 1.2;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    &--name {
+      margin-right: 15px;
+      width: 149px;
+    }
+    &--num {
+      width: 92px;
+    }
+  }
+}
+
+.catalog {
+  &__categories {
+
+
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 15px;
+  }
+  &__btn {
+    color: $second;
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0;
+    font-size: 18px;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+  &__checkbox {
+    padding-left: 52px;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    &:hover .catalog__text {
+      color: $orange;
+    }
+    &:hover .catalog__span {
+      border: 1px solid $orange;
+    }
+    &:focus .catalog__text {
+      color: $accent;
+    }
+    
+  }
+  &__input {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    &:checked + .catalog__span {
+      background-image: url('../images/icons/tick.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      border: 1px solid $accent;
+    }
+  }
+  &__checkbox-inner {
+    
+  }
+  &__text {
+    transition: color 0.4s;
+  }
+  &__span {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background-color: #FAEDED;
+    top: 0;
+    left: 16px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: border 0.4s;
+  }
+}
+
 
 
 
