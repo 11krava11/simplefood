@@ -67,6 +67,7 @@ a {
 .link {
   color: $second;
   transition: box-shadow 0.5s, text-shadow 0.5s, color 0.4s;
+  border-radius: 5px;
   &:focus {
     box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
   }
@@ -570,7 +571,84 @@ a {
   padding: 25px 0;
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  &__list {
+    display: flex;
+    max-width: 372px;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 30px;
+    @include r(768) {
+     padding-top: 10px; 
+    }
+  }
+  &__item {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAEDED;
+    border-radius: 3px;
+    transition: background-color 0.4s, color 0.4s;
+    &--active {
+      border: 1px solid $accent;
+    }
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+    &:focus {
+      border: 1px solid $orange;
+      background-color: #FAEDED;
+    }
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+    &--none {
+      @include r(576) {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    font-size: 18px;
+    line-height: 1;
+  }
+}
 
+.filter-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #fff;
+  width: 320px;
+  padding-top: 20px;
+  padding-left: 0;
+}
+
+.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-lock {
+    overflow: hidden;
+    position: relative;
+     &::after {
+       content: '';
+       position: absolute;
+       left: 0;
+       right: 0;
+       top: 0;
+       bottom: 0;
+       background-color: rgba(0,0,0, 0.5);
+     }
+   }
 
 
 

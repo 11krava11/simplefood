@@ -1,7 +1,4 @@
 $(function() {
-  
-  
-
   $('.comments__inner').slick({
     arrows: true,
     dots: true,
@@ -21,8 +18,77 @@ $(function() {
   
 });
 
+$('').ionRangeSlider({
+  type: 'double'
+});
+
+var $range = $(".catalog__price-input");
+  var $inputFrom = $(".catalog__price-price--from");
+  var $inputTo = $(".catalog__price-price--to");
+  var instance;
+  var min = 50;
+  var max = 1100;
+  var from = 0;
+  var to = 0;
+  
+  $range.ionRangeSlider({
+      skin: "round",
+      type: "double",
+      min: min,
+      max: max,
+      from: 100,
+      to: 1000,
+      onStart: updateInputs,
+      onChange: updateInputs,
+      onFinish: updateInputs
+  });
+  instance = $range.data("ionRangeSlider");
+  
+  function updateInputs (data) {
+      from = data.from;
+      to = data.to;
+  
+      $inputFrom.prop("value", from);
+      $inputTo.prop("value", to);
+  }
+  
+  $inputFrom.on("change", function () {
+      var val = $(this).prop("value");
+  
+      // validate
+      if (val < min) {
+          val = min;
+      } else if (val > to) {
+          val = to;
+      }
+  
+      instance.update({
+          from: val
+      });
+  
+      $(this).prop("value", val);
+  
+  });
+  
+  $inputTo.on("change", function () {
+      var val = $(this).prop("value");
+  
+      // validate
+      if (val < from) {
+          val = from;
+      } else if (val > max) {
+          val = max;
+      }
+  
+      instance.update({
+          to: val
+      });
+  
+      $(this).prop("value", val);
+  });
 $('.catalog__top-select').styler();
-$('.inputt').styler();
+
+
 
 $(window).on('load resize', function () {
   if ($(window).width() < 768) {
@@ -38,25 +104,18 @@ $(window).on('load resize', function () {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-	//DOMContentLoaded означает, когда наш документ будет готов к работе, тогда начнут работать наши скрипты
-  
-	//Mobile Menu
-  const burger = document.querySelector('.burger'); //находим наш бургер по селектору класса
-  const cross = document.querySelector('menu__cross');
-  
-  burger.addEventListener('click', () => {
-	//Добавляем событие "клик" на бургер
-
-  menu.classList.add('menu--active'); //при клике на бургер у нас будет либо добавлятся класс, либо удаляется.
-		//ВАЖНО! Мы уже работаем с данным классом, поэтому тут "." не ставим, иначе в атрибут class значение добавится с "." и работать не будет.
-  
-  });
-
-  cross.addEventListener('click', () => {
-    mobileMenu.classList.remove('menu--active');
-  });
-
+$(window).on('load resize', function () {
+  if ($(window).width() < 992) {
+    $('.discount__list:not(.slick-initialized)').slick({
+      arrows: false,
+      dots: true,
+      infinite: true,
+      speed: 100,
+      slidesToShow: 1
+    });
+  } else {
+    $('.discount__list.slick-initialized').slick('unslick');
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -96,7 +155,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+document.addEventListener('DOMContentLoaded', () => {
 
+  const filterBtn = document.querySelector('.catalog__top-btn');
+  const filterMob = document.querySelector('.filter-mobile');
+  const bodyLock = document.querySelector('body');
+  const filterCross = document.querySelector('.filter__cross');
+  
+
+  filterBtn.addEventListener('click', function(){
+    filterMob.classList.toggle('open');
+    if (filterMob.classList.contains('open')) {
+      bodyLock.classList.add('filter-lock');
+    }
+    else {
+      bodyLock.classList.remove('filter-lock');
+    }
+  });
+
+  filterCross.addEventListener('click', function(){
+    filterMob.classList.remove('open');
+  });
+
+  filterCross.addEventListener('click', function(){
+    bodyLock.classList.remove('filter-lock');
+  });
+
+  
+
+});
 
 
 
